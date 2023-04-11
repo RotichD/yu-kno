@@ -4,10 +4,18 @@
 
 @layer components {
   .infoText {
-    @apply relative p-4 bg-neutral-900 rounded-lg max-w-xs group-hover:bg-neutral-800 transition duration-500 group-hover:duration-200;
+    @apply relative p-4 bg-neutral-900 rounded-lg md:max-w-xs  transition duration-500 group-hover:duration-200;
+  }
+
+  .hoverDarken {
+    @apply group-hover:bg-neutral-950
   }
 
   .neonGlow {
-    @apply absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-fuchsia-700 rounded-lg blur-sm opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse;
+    @apply absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-fuchsia-700 rounded-lg blur-sm opacity-70;
+  }
+
+  .hoverGlow {
+    @apply group-hover:opacity-100 transition duration-500 group-hover:duration-200
   }
 }
