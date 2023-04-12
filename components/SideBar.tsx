@@ -39,7 +39,7 @@ function SideBar() {
         </div>
       </div>
       {session && (
-        <div className='flex items-center justify-between p-2 text-white'>
+        <div className='flex flex-col sm:flex-row items-center justify-between p-2 text-white'>
           <img
             className='h-12 w-12 rounded-full'
             src={session.user?.image!}
@@ -53,7 +53,7 @@ function SideBar() {
             onClick={() => signOut()}
           >
             <ArrowLeftOnRectangleIcon className='h-6 w-6' />
-            <p>Logout</p>
+            <p className='hidden sm:inline'>Logout</p>
           </button>
         </div>
       )}

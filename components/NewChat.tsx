@@ -25,12 +25,12 @@ function NewChat() {
   return (
     <div
       onClick={createNewChat}
-      className='relative flex items-center justify-between infoText text-white
+      className='relative flex items-center justify-center sm:justify-between infoText text-white
        cursor-pointer hover:bg-neutral-700
        hover:bg-gradient-to-r hover:from-purple-600/50 hover:to-fuchsia-700/90'
     >
       <PlusIcon className='w-6 h-6' />
-      <p className='text-sm md:text-base'>New Chat</p>
+      <p className='hidden sm:inline text-sm md:text-base'>New Chat</p>
     </div>
   );
 }

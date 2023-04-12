@@ -17,8 +17,6 @@ const query = async (prompt: string, chatId: string, model: string) => {
       (err) => `Yu-Kno was unable to find an answer :( (Error: ${err.message})`
     );
 
-  console.log('RESPONSE FROM CHATGPT WAS', res);
-
   return res;
 };
 

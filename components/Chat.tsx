@@ -41,7 +41,7 @@ function ChatRow({ id }: Props) {
       className={`chatComponent text-white ${active && 'bg-neutral-900/50'}`}
     >
       <ChatBubbleLeftEllipsisIcon className='h-5 w-5' />
-      <p className='flex-1 ml-2 truncate'>
+      <p className='hidden sm:inline flex-1 ml-2 truncate'>
         {messages?.docs[messages?.docs.length - 1]?.data().text || 'New Chat'}
       </p>
       <TrashIcon
