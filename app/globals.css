@@ -8,7 +8,7 @@
   }
 
   .hoverDarken {
-    @apply group-hover:bg-neutral-950
+    @apply group-hover:bg-neutral-950;
   }
 
   .neonGlow {
@@ -16,6 +16,10 @@
   }
 
   .hoverGlow {
-    @apply group-hover:opacity-100 transition duration-500 group-hover:duration-200
+    @apply group-hover:opacity-100 transition duration-500 group-hover:duration-200;
+  }
+
+  .chatComponent {
+    @apply flex items-center justify-between p-2 my-2 bg-neutral-700 hover:bg-neutral-900 rounded-lg;
   }
 }

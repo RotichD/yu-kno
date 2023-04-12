@@ -1,20 +1,35 @@
 'use client';
 import { useSession, signOut } from 'next-auth/react';
 import { ArrowLeftOnRectangleIcon } from '@heroicons/react/24/outline';
+import { useCollection } from 'react-firebase-hooks/firestore';
+import { collection, orderBy, query } from 'firebase/firestore';
+import { db } from '@/firebase';
 
 import NewChat from './NewChat';
+import Chat from './Chat';
 
 function SideBar() {
   const { data: session } = useSession();
+
+  const [chats, loading, error] = useCollection(
+    session &&
+      query(
+        collection(db, 'users', session.user?.email!, 'chats'),
+        orderBy('createdAt', 'asc')
+      )
+  );
+
+  console.log(chats);
 
   return (
     <div className='flex h-screen flex-col bg-neutral-800 p-2'>
       <div className='flex-1'>
         <div>
-          {/* New Chat */}
           <NewChat />
           <div>{/* model selection */}</div>
-          {/* map through rows*/}
+          {chats?.docs.map((chat) => (
+            <Chat key={chat.id} id={chat.id} />
+          ))}
         </div>
       </div>
       {session && (

@@ -8,6 +8,7 @@ import Login from '@/components/Login';
 import SideBar from '@/components/SideBar';
 
 import { Roboto_Condensed, Cabin } from 'next/font/google';
+import ClientProvider from '@/components/ClientProvider';
 
 const roboto = Roboto_Condensed({
   weight: ['400', '700'],
@@ -44,7 +45,7 @@ export default async function RootLayout({
               <div className='max-w-xs h-screen overflow-y-auto hidden sm:block md:min-w-[16rem] '>
                 <SideBar />
               </div>
-              {/* client provider */}
+              <ClientProvider />
               <div className='bg-neutral-900 flex-1 text-white'>{children}</div>
             </div>
           )}
