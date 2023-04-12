@@ -19,3 +19,12 @@ interface CompletionResponse {
   n: number;
   stream: string | undefined;
 }
+
+type Option = {
+  value: string;
+  label: string;
+};
+
+type Data = {
+  modelOptions: Option[];
+};
